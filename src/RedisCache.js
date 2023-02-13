@@ -12,7 +12,7 @@ class RedisCache {
     document = await this.redisClient.hGet(schema.collection.name, key);
 
     if (!document) {
-      document = await schema.findOne({[objectId]: key}); 
+      document = await schema.findOne({ [objectId]: key });
 
       if (document) {
         this.redisClient.hSet(
@@ -33,7 +33,7 @@ class RedisCache {
     if (!documents) {
       documents = await schema.find();
       // if documents is not null or empty cache them all
-      if (documents && documents.length > 0) {
+      if (documents && Array.isArray(documents)) {
         for (document in documents) {
           this.redisClient.hSet(
             schema.collection.name,
