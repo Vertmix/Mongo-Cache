@@ -1,0 +1,12 @@
+{
+  "name": "mongo-cache",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Cameron Carvalho <cjcameron92@gmail.com>",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^6.9.1",
+    "redis": "^4.6.4"
+  }
+}
